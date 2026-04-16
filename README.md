@@ -1,31 +1,34 @@
-# Projeto #1: Motor Quantitativo de Gestão de Tesouraria (ALM) 🚀
+# 🏛️ Laboratório de Engenharia Financeira: Motor ALM Quantitativo
 
-**Laboratório Público de Engenharia Financeira**
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![Status](https://img.shields.io/badge/Status-Produção_Simulada-success)
+![Mercado](https://img.shields.io/badge/Mercado-ALM%20%7C%20Tesouraria-orange)
 
-Este repositório contém a arquitetura e os algoritmos desenvolvidos para resolver o clássico dilema de *Asset Liability Management* (ALM) em tesourarias institucionais: maximizar a rentabilidade do *spread* sem asfixiar o capital regulatório e respeitando rigorosos limites de risco de liquidez.
+Este repositório contém o **Projeto #1** do meu portfólio de Engenharia Financeira: um ecossistema quantitativo em Python projetado para automatizar a Gestão de Ativos e Passivos (ALM), calcular o Risco de Liquidez (LCR - Basileia III) e precificar derivativos *Taylor-Made* utilizando a Curva Spot de Juros.
 
-## 📌 A Tese (O Problema)
-A tesouraria atua como o "coração" na precificação dos produtos da instituição (*transfer pricing*). Modelos tradicionais baseados em alocações estáticas geram alto custo de oportunidade e expõem a instituição a riscos de descasamento de prazos. Nosso motor busca otimizar essa alocação dinamicamente, unindo o rigor acadêmico (FIPECAFI) com automação em Python.
+## 🏗️ Arquitetura do Sistema (Os 4 Pilares)
 
-## ⚙️ Arquitetura do Motor (A Solução)
-A metodologia deste projeto é baseada no padrão CRISP-DM e dividida em três pilares principais:
+O sistema foi desenhado com base em arquitetura desacoplada e alta Tolerância a Falhas (*Fault Tolerance*):
 
-### Pilar 1: Pipeline de Ingestão de Dados (PDF para JSON)
-Algoritmo desenvolvido com a biblioteca `PyMuPDF` para transformar relatórios, regulamentos e políticas de tesouraria em texto estruturado e indexável, servindo como banco de dados NoSQL (JSON) para consumo de inteligência artificial.
+1. **Ingestor de Regras (PDF ➡️ JSON):** Extrai normativos do Banco Central e os converte em parâmetros dinâmicos. O código Python nunca é alterado em caso de mudança regulatória.
+2. **Motor de Curva de Juros (ETTJ):** Robôs de *Web Scraping* blindados extraem as taxas do DI Futuro ao vivo (B3/InfoMoney). O cálculo numérico de Interpolação Linear gera a curva contínua.
+3. **Calculadora LCR (Basileia III):** Algoritmo de estresse de caixa que cruza o balanço da instituição com as regras de *Run-off* do BACEN.
+4. **Governança (Audit Trail):** Módulo gerador de relatórios formais em `.txt` para comprovação de Memória de Cálculo perante auditorias.
 
-### Pilar 2: Construtor da Curva a Termo (Curva Spot/Forward B3)
-Motor matemático que utiliza a técnica de **Spline Cúbica** (`scipy.interpolate`) para capturar vértices de DI Futuro da B3 e construir uma curva de juros contínua. Isso permite a precificação exata de derivativos e o cálculo de *duration* em datas fracionadas.
+## 💼 Casos de Uso Executados
 
-### Pilar 3: Calculadora de Risco de Liquidez (LCR - Basileia)
-Modelo que aplica simulações de estresse no fluxo de caixa (corrida bancária) para otimizar o *Liquidity Coverage Ratio* (LCR), garantindo matematicamente que o estoque de Ativos de Alta Liquidez (HQLA) seja suficiente para cenários de 30 dias.
+### 🔴 Caso 1: Risco de Liquidez Institucional
+Processamento do Balanço Simulativo (Banco Alpha - Case FIPECAFI):
+* **HQLA:** R$ 165.2 Bilhões
+* **Resultado:** O motor identificou um estrangulamento de caixa de Atacado, cravando o **LCR em 83.83%** (Abaixo do mínimo de 100%), emitindo um alerta regulatório de rebalanceamento.
 
-## 🛠️ Stack Tecnológico
-* **Linguagem:** Python 3.10+
-* **Processamento de Documentos:** `PyMuPDF`
-* **Computação Científica:** `numpy`, `scipy`
-* **Manipulação de Dados:** `pandas`
-* **Visualização:** `matplotlib`
-* **Armazenamento de Metadados:** JSON (NoSQL)
+### 🟢 Caso 2: Precificação Taylor-Made (OTC)
+Demanda de mesa para precificar uma captação em prazo "cego" de bolsa: exatos **118 Dias Úteis**.
+* **Mecânica:** O motor ingere 41 vértices ativos, localiza os nós de contorno (97 DU e 120 DU) e aplica a fórmula de Interpolação Linear.
+* **Preço Justo:** O algoritmo cravou a taxa em **14.149% a.a.**, permitindo agilidade no fechamento de *spread*.
 
-## 📄 Licença
-Este projeto faz parte de um laboratório público de pesquisa em Engenharia Financeira. (Sinta-se à vontade para clonar, estudar e contribuir).
+## 🚀 Como Executar
+
+Clone o repositório e instale as dependências:
+```bash
+pip install pandas numpy scipy matplotlib requests pyperclip
