@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Produção_Simulada-success)
 ![Mercado](https://img.shields.io/badge/Mercado-ALM%20%7C%20Tesouraria-orange)
 
-Este repositório contém o **Projeto #1** do meu portfólio de Engenharia Financeira: um ecossistema quantitativo em Python projetado para automatizar a Gestão de Ativos e Passivos (ALM), calcular o Risco de Liquidez (LCR - Basileia III) e precificar derivativos *Taylor-Made* utilizando a Curva Spot de Juros.
+Este repositório contém o **Projeto #7** do meu portfólio de Engenharia Financeira: um ecossistema quantitativo em Python projetado para automatizar a Gestão de Ativos e Passivos (ALM), calcular o Risco de Liquidez (LCR - Basileia III) e precificar derivativos *Taylor-Made* utilizando a Curva Spot de Juros.
 
 ## 🏗️ Arquitetura do Sistema (Os 4 Pilares)
 
