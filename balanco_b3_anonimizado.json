@@ -1,0 +1,24 @@
+{
+  "instituicao": "Banco Alpha",
+  "data_referencia": "Fechamento Trimestral",
+  "hqla_bruto": 352450800000.00,
+  "saidas_caixa": [
+    {
+      "descricao": "Depósitos de Varejo (CDB, Poupança)",
+      "saldo_bruto": 612300500000.00,
+      "regra_bacen": "captacoes_varejo"
+    },
+    {
+      "descricao": "Captações de Atacado (Fundos, Corporate)",
+      "saldo_bruto": 415800200000.00,
+      "regra_bacen": "captacoes_atacado_sem_garantia"
+    }
+  ],
+  "entradas_caixa": [
+    {
+      "descricao": "Recebimentos Projetados (Crédito Varejo/PJ)",
+      "saldo_bruto": 158900400000.00,
+      "regra_bacen": "recebimentos_elegiveis"
+    }
+  ]
+}

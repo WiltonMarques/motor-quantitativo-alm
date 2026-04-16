@@ -32,3 +32,12 @@ Demanda de mesa para precificar uma captação em prazo "cego" de bolsa: exatos 
 Clone o repositório e instale as dependências:
 ```bash
 pip install pandas numpy scipy matplotlib requests pyperclip
+
+Ordem de Execução do Pipeline:
+Extração de Juros: python infomoney_scraper_curva.py
+Renderização ETTJ: python motor_curva_juros.py
+Motor Basileia III: python calculadora_lcr_basileia.py
+Compliance: python gerador_relatorio_auditoria.py
+
+👨‍💻 Autor
+Desenvolvido com foco na intersecção entre Mercado de Capitais, Matemática Aplicada e Engenharia de Software.

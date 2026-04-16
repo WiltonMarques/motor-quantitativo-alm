@@ -1,0 +1,29 @@
+{
+  "instituicao": "Banco Alpha",
+  "data_referencia": "Março/2022",
+  "hqla": 165225507000.00,
+  "saidas_esperadas": [
+    {
+      "descricao": "Captações de Varejo (PF)",
+      "saldo_total": 341139760000.00,
+      "taxa_fuga": 0.099
+    },
+    {
+      "descricao": "Captações de Atacado não colateralizadas",
+      "saldo_total": 234902845000.00,
+      "taxa_fuga": 0.403
+    },
+    {
+      "descricao": "Outras obrigações contratuais (Trade Finance, Repasse)",
+      "saldo_total": 140664795000.00,
+      "taxa_fuga": 0.955
+    }
+  ],
+  "entradas_esperadas": [
+    {
+      "descricao": "Recebimentos (Crédito, Resgates, Trade Finance)",
+      "saldo_total": 103581850000.00,
+      "taxa_recebimento": 0.634
+    }
+  ]
+}

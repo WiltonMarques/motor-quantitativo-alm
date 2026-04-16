@@ -1,0 +1,53 @@
+======================================================================
+🏛️ MEMÓRIA DE CÁLCULO E TRILHA DE AUDITORIA (AUDIT TRAIL)
+Instituição Reportante: Banco Alpha
+Data/Hora da Emissão: 15/04/2026 22:32:47
+Propósito: Comprovação Regulatória (Circular BACEN 3.749) e Precificação
+======================================================================
+
+■ SEÇÃO I: CÁLCULO DO LCR (LIQUIDITY COVERAGE RATIO)
+----------------------------------------------------------------------
+1, Estoque HQLA (Ativos de Alta Liquidez): R$ 165.225.507.000,00
+
+2. Saídas de Caixa Estressadas (Outflows):
+   -> Captações de Varejo (PF):
+      Saldo Base: R$ 341.139.760.000,00 | Fator de Estresse: 9,9%
+      Saída Ponderada: R$ 33.772.836.240,00
+   -> Captações de Atacado não colateralizadas:
+      Saldo Base: R$ 234.902.845.000,00 | Fator de Estresse: 40,3%
+      Saída Ponderada: R$ 94.665.846.535,00
+   -> Outras obrigações contratuais (Trade Finance, Repasse):
+      Saldo Base: R$ 140.664.795.000,00 | Fator de Estresse: 95,5%
+      Saída Ponderada: R$ 134.334.879.225,00
+
+3. Entradas de Caixa Estressadas (Inflows):
+   -> Recebimentos (Crédito, Resgates, Trade Finance):
+      Saldo Base: R$ 103.581.850.000,00 | Fator de Recebimento: 63,4%
+      Entrada Ponderada: R$ 65.670.892.900,00
+
+4. Consolidação do Índice:
+   Total de Saídas Ponderadas: R$ 262.773.562.000,00
+   Entradas Elegíveis (Teto 75%): R$ 65.670.892.900,00
+   Saídas Líquidas Estressadas: R$ 197.102.669.100,00
+   >>> LCR REPORTADO: 83.83%
+
+■ SEÇÃO II: MEMÓRIA DE INTERPOLAÇÃO DE CURVA SPOT (TAYLOR-MADE)
+----------------------------------------------------------------------
+Fonte de Dados: InfoMoney - Área de Transferência (Pyperclip) (2026-04-15 21:57:53)
+Prazo Alvo Solicitado: 118 Dias Úteis (DU)
+
+Fórmula Aplicada: Interpolação Linear de 1º Grau
+Vértice Inferior (V1): 99 DU a 14.210%
+Vértice Superior (V2): 121 DU a 14.140%
+
+Passo a Passo Matemático:
+1. Fator de Tempo (Peso): (118 - 99) / (121 - 99) = 0.8636
+2. Spread entre Vértices: 14.140% - 14.210% = -0.070%
+3. Taxa Interpolada: 14.210% + (0.8636 * -0.070%)
+   >>> TAXA JUSTA DE PRECIFICAÇÃO: 14.150% a.a.
+
+======================================================================
+FIM DO RELATÓRIO
+Documento gerado automaticamente pelo Sistema ALM - Banco Alpha
+Assinatura Digital (Hash): Requisito não implementado na v1.0
+======================================================================
